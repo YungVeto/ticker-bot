@@ -1,5 +1,8 @@
 name: Test order
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 15 * * 1-5"
 jobs:
   run:
     runs-on: ubuntu-latest
