@@ -1,0 +1,18 @@
+name: Bot 2 (most active)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 15-20 * * 1-5"
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python bot2.py
+        env:
+          ALPACA_KEY: ${{ secrets.ALPACA_KEY_2 }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET_2 }}
