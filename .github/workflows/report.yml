@@ -1,0 +1,35 @@
+name: Report
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Bot 1", "Bot 2"]
+    types: [completed]
+  schedule:
+    - cron: "30 21 * * 1-5"
+permissions:
+  contents: write
+concurrency:
+  group: report
+  cancel-in-progress: false
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: sleep 60
+      - run: python report.py
+        env:
+          ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+          ALPACA_KEY_2: ${{ secrets.ALPACA_KEY_2 }}
+          ALPACA_SECRET_2: ${{ secrets.ALPACA_SECRET_2 }}
+      - run: |
+          git config user.name "report-bot"
+          git config user.email "report-bot@users.noreply.github.com"
+          git add reports
+          git commit -m "Update reports" || echo "No changes"
+          git push
