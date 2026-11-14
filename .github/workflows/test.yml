@@ -1,4 +1,4 @@
-name: Test order
+name: Bot 1
 on:
   workflow_dispatch:
   schedule:
