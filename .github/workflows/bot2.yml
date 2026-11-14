@@ -1,4 +1,4 @@
-name: Bot 2 (most active)
+name: Bot 2
 on:
   workflow_dispatch:
   schedule:
