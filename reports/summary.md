@@ -1,12 +1,12 @@
 # Bot report
-Updated 2026-11-16 20:42 UTC
+Updated 2026-11-16 22:13 UTC
 
 ## bot1
-- Equity: $99,976.72
+- Equity: $99,980.72
 - Closed trades: 3 (1 winners)
 - Realized P/L: $-8.06
-- Open positions: 1 (unrealized P/L $-15.20)
-  - HZN: bought at 87.48, now 86.15, -1.52%
+- Open positions: 1 (unrealized P/L $-11.20)
+  - HZN: bought at 87.48, now 86.50, -1.12%
 
 ## bot2
 - Equity: $99,971.45
