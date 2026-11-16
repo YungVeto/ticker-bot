@@ -1,16 +1,15 @@
 # Bot report
-Updated 2026-11-16 17:53 UTC
+Updated 2026-11-16 18:41 UTC
 
 ## bot1
-- Equity: $99,988.60
+- Equity: $99,988.72
 - Closed trades: 3 (1 winners)
 - Realized P/L: $-8.06
-- Open positions: 1 (unrealized P/L $-3.32)
-  - HZN: bought at 87.48, now 87.19, -0.33%
+- Open positions: 1 (unrealized P/L $-3.20)
+  - HZN: bought at 87.48, now 87.20, -0.32%
 
 ## bot2
-- Equity: $99,981.04
-- Closed trades: 0 (0 winners)
-- Realized P/L: $0.00
-- Open positions: 1 (unrealized P/L $-18.96)
-  - NVDA: bought at 159.81, now 156.78, -1.90%
+- Equity: $99,971.45
+- Closed trades: 1 (0 winners)
+- Realized P/L: $-28.55
+- Open positions: 0 (unrealized P/L $0.00)
