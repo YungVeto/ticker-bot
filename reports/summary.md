@@ -1,15 +1,15 @@
 # Bot report
-Updated 2026-11-15 01:58 UTC
+Updated 2026-11-16 16:30 UTC
 
 ## bot1
-- Equity: $99,994.26
-- Closed trades: 1 (1 winners)
-- Realized P/L: $1.17
-- Open positions: 1 (unrealized P/L $-6.89)
-  - AAPL: bought at 359.71, now 356.27, -0.96%
+- Equity: $99,991.92
+- Closed trades: 3 (1 winners)
+- Realized P/L: $-8.06
+- Open positions: 0 (unrealized P/L $0.00)
 
 ## bot2
-- Equity: $100,000.00
+- Equity: $100,000.03
 - Closed trades: 0 (0 winners)
 - Realized P/L: $0.00
-- Open positions: 0 (unrealized P/L $0.00)
+- Open positions: 1 (unrealized P/L $-0.03)
+  - NVDA: bought at 159.81, now 159.81, -0.00%
