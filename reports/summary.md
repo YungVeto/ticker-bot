@@ -1,5 +1,5 @@
 # Bot report
-Updated 2026-11-18 17:15 UTC
+Updated 2026-11-18 19:00 UTC
 
 ## bot1
 - Equity: $99,888.35
@@ -8,8 +8,8 @@ Updated 2026-11-18 17:15 UTC
 - Open positions: 0 (unrealized P/L $0.00)
 
 ## bot2
-- Equity: $99,975.07
+- Equity: $99,978.76
 - Closed trades: 2 (1 winners)
 - Realized P/L: $-17.83
-- Open positions: 1 (unrealized P/L $-7.02)
-  - NVDA: bought at 152.73, now 151.66, -0.70%
+- Open positions: 1 (unrealized P/L $-3.33)
+  - NVDA: bought at 152.73, now 152.22, -0.33%
