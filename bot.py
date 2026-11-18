@@ -5,8 +5,8 @@ import requests
 TRADE = "https://paper-api.alpaca.markets/v2"
 DATA = "https://data.alpaca.markets"
 H = {
-    "APCA-API-KEY-ID": os.environ["ALPACA_KEY"],
-    "APCA-API-SECRET-KEY": os.environ["ALPACA_SECRET"],
+    "APCA-API-KEY-ID": os.environ["ALPACA_KEY"].strip(),
+    "APCA-API-SECRET-KEY": os.environ["ALPACA_SECRET"].strip(),
 }
 NOTIONAL = "1000"    # dollars per paper trade
 MIN_PRICE = 10.0     # skip cheap, spiky stocks
@@ -61,12 +61,20 @@ def pick_ticker(held):
     data = get(f"{DATA}/v1beta1/screener/stocks/movers", top=20)
     for item in data["gainers"]:
         sym = item["symbol"]
+        price = item["price"]
         if sym in held or not sym.isalpha() or len(sym) > 5:
             continue
-        if item["price"] >= MIN_PRICE:
-            print(f"Top gainer: {sym} up {item['percent_change']}%")
-            return sym, item["price"]
-    return None, None
+        if price < MIN_PRICE:
+            continue
+        asset = get(f"{TRADE}/assets/{sym}")
+        if not asset["tradable"]:
+            continue
+        frac = asset["fractionable"]
+        if not frac and price > float(NOTIONAL):
+            continue
+        print(f"Top gainer: {sym} up {item['percent_change']}%")
+        return sym, price, frac
+    return None, None, None
 
 
 check_sells()
@@ -76,15 +84,19 @@ if bought_today():
     raise SystemExit
 
 held = {p["symbol"] for p in get(f"{TRADE}/positions")}
-sym, price = pick_ticker(held)
+sym, price, frac = pick_ticker(held)
 if not sym:
     print("No suitable ticker found")
     raise SystemExit
 
-print(f"Buying ${NOTIONAL} of {sym} at about {price}")
-order = requests.post(
-    f"{TRADE}/orders", headers=H, timeout=30,
-    json={"symbol": sym, "notional": NOTIONAL, "side": "buy",
-          "type": "market", "time_in_force": "day"},
-)
+body = {"symbol": sym, "side": "buy", "type": "market",
+        "time_in_force": "day"}
+if frac:
+    body["notional"] = NOTIONAL
+    print(f"Buying ${NOTIONAL} of {sym} at about {price}")
+else:
+    qty = int(float(NOTIONAL) // price)
+    body["qty"] = str(qty)
+    print(f"Buying {qty} whole shares of {sym} at about {price}")
+order = requests.post(f"{TRADE}/orders", headers=H, json=body, timeout=30)
 print(order.status_code, order.json())
