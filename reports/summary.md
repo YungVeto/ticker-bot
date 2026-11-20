@@ -1,12 +1,12 @@
 # Bot report
-Updated 2026-11-20 20:05 UTC
+Updated 2026-11-20 20:57 UTC
 
 ## bot1
-- Equity: $99,888.24
+- Equity: $99,886.72
 - Closed trades: 6 (2 winners)
 - Realized P/L: $-101.53
-- Open positions: 1 (unrealized P/L $-10.07)
-  - SONN: bought at 51.75, now 51.22, -1.02%
+- Open positions: 1 (unrealized P/L $-11.59)
+  - SONN: bought at 51.75, now 51.14, -1.18%
 
 ## bot2
 - Equity: $99,925.28
