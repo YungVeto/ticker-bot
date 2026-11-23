@@ -1,15 +1,16 @@
 # Bot report
-Updated 2026-11-20 21:54 UTC
+Updated 2026-11-23 16:15 UTC
 
 ## bot1
-- Equity: $99,884.44
-- Closed trades: 6 (2 winners)
-- Realized P/L: $-101.53
-- Open positions: 1 (unrealized P/L $-13.87)
-  - SONN: bought at 51.75, now 51.02, -1.41%
+- Equity: $99,889.07
+- Closed trades: 7 (2 winners)
+- Realized P/L: $-116.92
+- Open positions: 1 (unrealized P/L $6.16)
+  - ATHX: bought at 19.99, now 20.11, 0.62%
 
 ## bot2
-- Equity: $99,925.28
+- Equity: $99,916.27
 - Closed trades: 5 (2 winners)
 - Realized P/L: $-74.57
-- Open positions: 0 (unrealized P/L $0.00)
+- Open positions: 1 (unrealized P/L $-8.88)
+  - NVDA: bought at 168.38, now 166.89, -0.89%
