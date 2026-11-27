@@ -1,14 +1,14 @@
 # Bot report
-Updated 2026-11-26 22:00 UTC
+Updated 2026-11-27 16:11 UTC
 
 ## bot1
-- Equity: $86,731.34
-- Closed trades: 10 (3 winners)
-- Realized P/L: $-13,268.37
+- Equity: $85,898.74
+- Closed trades: 11 (3 winners)
+- Realized P/L: $-14,100.97
 - Open positions: 0 (unrealized P/L $0.00)
 
 ## bot2
-- Equity: $100,047.40
-- Closed trades: 8 (4 winners)
-- Realized P/L: $47.70
+- Equity: $100,073.39
+- Closed trades: 9 (5 winners)
+- Realized P/L: $73.69
 - Open positions: 0 (unrealized P/L $0.00)
